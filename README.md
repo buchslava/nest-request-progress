@@ -20,3 +20,4 @@ Visit the [Nx Documentation](https://nx.dev) to learn more.
 
 
 npx nx run server:serve
+https://dev.to/tqbit/how-to-monitor-the-progress-of-a-javascript-fetch-request-and-cancel-it-on-demand-107f
