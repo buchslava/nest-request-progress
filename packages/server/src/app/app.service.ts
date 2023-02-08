@@ -8,12 +8,10 @@ const delay = (time: number) =>
 
 @Injectable()
 export class AppService {
-  constructor(private readonly progressManager: ProgressManager) {
-    console.log(this.progressManager);
-  }
+  constructor(private readonly progressManager: ProgressManager) {}
 
   getIterationCount(): number {
-    return 100;
+    return 150;
   }
 
   async getData(token: string): Promise<string[]> {

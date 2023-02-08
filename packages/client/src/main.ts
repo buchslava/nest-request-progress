@@ -4,18 +4,20 @@ import axios from 'axios';
 
 const token = v4();
 
+console.info(new Date().toISOString(), `start the request`);
+
 axios
   .get(`http://localhost:3333/api?token=${token}`)
   .then((resp) => {
-    console.log(`got ${resp.data.length} resords`);
+    console.info(new Date().toISOString(), `got ${resp.data.length} resords`);
     process.exit(0);
   })
   .catch((e) => {
-    console.log(e);
+    console.info(e);
     process.exit(0);
   });
 
 const ioClient = io.connect('ws://localhost:3333');
 ioClient.on(`progress-${token}`, (progress) =>
-  console.info('progress', progress)
+  console.info(new Date().toISOString(), `processed ${progress}%`)
 );
